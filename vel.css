@@ -1,0 +1,130 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Fireworks behind */
+#fireworks{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:1;
+}
+
+/* Hearts layer */
+.hearts{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:2;
+}
+
+.hearts span{
+    position:absolute;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float{
+    from{ transform:translateY(100vh); opacity:1; }
+    to{ transform:translateY(-10vh); opacity:0; }
+}
+
+/* Card */
+.card{
+    position:relative;
+    z-index:3;
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.25);
+    border-radius:25px;
+    padding:35px;
+    width:360px;
+    text-align:center;
+    color:#222;
+    box-shadow:0 25px 60px rgba(0,0,0,0.4);
+    animation: pop 0.8s ease;
+}
+
+@keyframes pop{
+    from{transform:scale(0.7); opacity:0;}
+    to{transform:scale(1); opacity:1;}
+}
+
+.title{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.question{
+    font-size:20px;
+    margin:15px 0;
+}
+
+.photos{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.photos img{
+    width:85px;
+    height:85px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid white;
+}
+
+/* Buttons area */
+.buttons{
+    margin-top:20px;
+    position:relative;
+    height:90px;
+}
+
+button{
+    padding:12px 28px;
+    font-size:18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#yes{
+    background:#ff4d6d;
+    color:white;
+}
+
+#yes:hover{
+    transform:scale(1.15);
+}
+
+#no{
+    background:#333;
+    color:white;
+    position:absolute;
+    left:150px;
+    top:20px;
+}
+
+.final-img{
+    width:130px;
+    border-radius:15px;
+    margin-top:10px;
+}
